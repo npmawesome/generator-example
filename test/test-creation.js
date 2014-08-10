@@ -19,9 +19,11 @@ describe('example generator', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      // add files you expect to exist here.
-      '.jshintrc',
-      '.editorconfig'
+      '.gitignore',
+      'LICENSE',
+      'README.md',
+      'index.js',
+      'package.json'
     ];
 
     helpers.mockPrompt(this.app, {

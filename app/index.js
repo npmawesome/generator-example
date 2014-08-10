@@ -22,7 +22,7 @@ var pkg = require('../package.json');
 
 module.exports = NpmAwesomeExampleGenerator;
 
-function NpmAwesomeExampleGenerator () {
+function NpmAwesomeExampleGenerator (args, options) {
     yeoman.generators.Base.apply(this, arguments);
     
     this.pkg = pkg;
@@ -38,6 +38,12 @@ function NpmAwesomeExampleGenerator () {
 
     // Will be extended by the asked slug
     this.articleuri = 'http://npmawesome.com/posts/';
+    
+    this.on('end', function () {
+        if (!options['skip-install']) {
+            this.spawnCommand('npm', ['install','--save', this.modulename]);
+        }
+    }.bind(this));
 }
 
 util.inherits(NpmAwesomeExampleGenerator, yeoman.generators.Base);
@@ -46,7 +52,7 @@ NpmAwesomeExampleGenerator.prototype.questions = function questions () {
     var done = this.async();
     var prompts = [];
 
-    this.log(this.readFileAsString(path.join(__dirname, 'figlet')));
+    this.log(this.readFileAsString(path.join(__dirname, 'header')));
 
     prompts.push({
         name: 'modulename',
@@ -77,10 +83,4 @@ NpmAwesomeExampleGenerator.prototype.templates = function templates () {
 NpmAwesomeExampleGenerator.prototype.statics = function statics () {
     this.copy('gitignore', '.gitignore');
     this.copy('LICENSE', 'LICENSE');    
-};
-
-NpmAwesomeExampleGenerator.prototype.install = function install () {
-    var done = this.async();
-
-    this.spawnCommand('npm', ['install','--save', this.modulename], done);
 };
