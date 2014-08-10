@@ -1,15 +1,14 @@
 {
   "name": "generator-example",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.1.0",
+  "description": "Scaffolds an example project for npmawesome.com",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "npmawesome/generator-example",
-  "author": {
-    "name": "npmawesome",
-    "email": "",
-    "url": "https://github.com/npmawesome"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:npmawesome/generator-example.git"
   },
+  "author": "npmawesome.com",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -23,9 +22,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0",
-    "yosay": "^0.1.0"
+    "yeoman-generator": "~0.16.0"
   },
   "devDependencies": {
     "mocha": "*"
