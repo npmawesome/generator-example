@@ -1,15 +1,15 @@
-# generator-example [![Build Status](https://travis-ci.org/npmawesome/generator-example.svg?branch=master)](https://travis-ci.org/npmawesome/generator-example)
+# generator-npmawesome-example [![Build Status](https://travis-ci.org/npmawesome/generator-npmawesome-example.svg?branch=master)](https://travis-ci.org/npmawesome/generator-npmawesome-example)
 
-> A [Yeoman](http://yeoman.io) generator which scaffolds an example for [npmawesome.com](http://npmawesome.com).
+> A [Yeoman](http://yeoman.io) generator which scaffolds an example project for [npmawesome.com](http://npmawesome.com).
 
 ## Getting Started
 
-    npm install -g npmawesome/generator-example
+    npm install -g generator-npmawesome-example
 
 ## Finally, initiate the generator:
 
 ```bash
-$ yo example
+$ yo npmawesome-example
 ```
 
 ## License
