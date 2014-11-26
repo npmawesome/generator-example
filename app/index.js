@@ -19,64 +19,64 @@ var pkg = require('../package.json');
 module.exports = NpmAwesomeExampleGenerator;
 
 function NpmAwesomeExampleGenerator (args, options) {
-    yeoman.generators.Base.apply(this, arguments);
+  yeoman.generators.Base.apply(this, arguments);
 
-    this.pkg = pkg;
+  this.pkg = pkg;
 
-    // Will be asked
-    this.modulename;
+  // Will be asked
+  this.modulename;
 
-    // Will be extended by `modulename` after asking
-    this.projectname = 'example-';
+  // Will be extended by `modulename` after asking
+  this.projectname = 'example-';
 
-    // Will be extended by `projectname`
-    this.repouri = 'https://github.com/npmawesome/';
+  // Will be extended by `projectname`
+  this.repouri = 'https://github.com/npmawesome/';
 
-    // Will be extended by the asked slug
-    this.articleuri = 'http://npmawesome.com/posts/';
+  // Will be extended by the asked slug
+  this.articleuri = 'http://npmawesome.com/posts/';
 
-    this.on('end', function () {
-        if (!options['skip-install']) {
-            this.spawnCommand('npm', ['install','--save', this.modulename]);
-        }
-    }.bind(this));
+  this.on('end', function () {
+    if (!options['skip-install']) {
+      this.spawnCommand('npm', ['install','--save', this.modulename]);
+    }
+  }.bind(this));
 }
 
 util.inherits(NpmAwesomeExampleGenerator, yeoman.generators.Base);
 
 NpmAwesomeExampleGenerator.prototype.questions = function questions () {
-    var done = this.async();
-    var prompts = [];
+  var done = this.async();
+  var prompts = [];
 
-    this.log(this.readFileAsString(path.join(__dirname, 'header')));
+  this.log(this.readFileAsString(path.join(__dirname, 'header')));
 
-    prompts.push({
-        name: 'modulename',
-        message: 'About what module is this example (npm module name)?'
-    });
+  prompts.push({
+    name: 'modulename',
+    message: 'About what module is this example (npm module name)?'
+  });
 
-    prompts.push({
-        name: 'slug',
-        message: 'The corresponding article slug (e.g. "2014-08-11-verror")?',
-    });
+  prompts.push({
+    name: 'slug',
+    message: 'The corresponding article slug (e.g. "2014-08-11-verror")?',
+  });
 
-    this.prompt(prompts, function (props) {
-        this.modulename = props.modulename;
-        this.projectname = this.projectname + this.modulename;
-        this.repouri = this.repouri + this.projectname;
-        this.articleuri = this.articleuri + props.slug;
+  this.prompt(prompts, function (props) {
+    this.modulename = props.modulename;
+    this.projectname = this.projectname + this.modulename;
+    this.repouri = this.repouri + this.projectname;
+    this.articleuri = this.articleuri + props.slug;
 
-        done();
-    }.bind(this));
+    done();
+  }.bind(this));
 };
 
 NpmAwesomeExampleGenerator.prototype.templates = function templates () {
-    this.template('_package.json', 'package.json');
-    this.template('_index.js', 'index.js');
-    this.template('README.md', 'README.md');
+  this.template('_package.json', 'package.json');
+  this.template('_index.js', 'index.js');
+  this.template('README.md', 'README.md');
 };
 
 NpmAwesomeExampleGenerator.prototype.statics = function statics () {
-    this.copy('gitignore', '.gitignore');
-    this.copy('LICENSE', 'LICENSE');
+  this.copy('gitignore', '.gitignore');
+  this.copy('LICENSE', 'LICENSE');
 };
