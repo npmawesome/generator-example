@@ -10,9 +10,7 @@ describe('example generator', function () {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('example:app', [
-        '../../app'
-      ]);
+      this.app = helpers.createGenerator('example:app', ['../../app']);
       done();
     }.bind(this));
   });
@@ -27,9 +25,13 @@ describe('example generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      'slug': '2014-01-01-express',
+      'modulename': 'express',
+      'nodejitsu': true
     });
+
     this.app.options['skip-install'] = true;
+
     this.app.run({}, function () {
       helpers.assertFile(expected);
       done();
