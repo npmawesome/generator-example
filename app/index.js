@@ -79,12 +79,12 @@ NpmAwesomeExampleGenerator.prototype.questions = function questions () {
 };
 
 NpmAwesomeExampleGenerator.prototype.templates = function templates () {
-  this.template('_package.json', 'package.json');
-  this.template('_index.js', 'index.js');
+  this.template('package.json', 'package.json');
+  this.template('index.js', 'index.js');
   this.template('README.md', 'README.md');
 };
 
 NpmAwesomeExampleGenerator.prototype.statics = function statics () {
-  this.copy('gitignore', '.gitignore');
+  this.copy('_gitignore', '.gitignore');
   this.copy('LICENSE', 'LICENSE');
 };
