@@ -1,6 +1,6 @@
 {
   "name": "generator-npmawesome-example",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Scaffolds an example project for npmawesome.com",
   "license": "MIT",
   "main": "app/index.js",
