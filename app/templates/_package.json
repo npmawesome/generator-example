@@ -4,6 +4,9 @@
   "description": "Example which describes how to use the <%= modulename %> module.",
   "homepage": "<%= articleuri %>",
   "license": "MIT",
+  "scripts": {
+    "test": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "<%= repouri %>"
