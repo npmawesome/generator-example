@@ -48,7 +48,7 @@ NpmAwesomeExampleGenerator.prototype.questions = function questions () {
   var done = this.async();
   var prompts = [];
 
-  this.log(this.readFileAsString(path.join(__dirname, 'header')));
+  this.log(this.readFileAsString(path.join(__dirname, 'header.txt')));
 
   prompts.push({
     name: 'modulename',
