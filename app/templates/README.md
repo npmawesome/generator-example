@@ -1,6 +1,6 @@
 # <%= projectname %>
 
-This example refers to the [article](<%= articleuri %>) on [npmawesome.com](http://npmawesome.com) about `<%= modulename %>`.
+This example refers to the article on <% if(nodejitsu) { %>[nodejitsu.com](http://blog.nodejitsu.com/) and <% } %>[npmawesome.com](<%= articleuri %>) about `<%= modulename %>`.
 
 ## Usage
 
@@ -9,3 +9,7 @@ This example refers to the [article](<%= articleuri %>) on [npmawesome.com](http
     npm install
 
     npm start
+
+## License
+
+MIT

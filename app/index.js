@@ -60,7 +60,15 @@ NpmAwesomeExampleGenerator.prototype.questions = function questions () {
     message: 'The corresponding article slug (e.g. "2014-08-11-verror")?',
   });
 
+  prompts.push({
+    name: 'nodejitsu',
+    type: 'confirm',
+    default: false,
+    message: 'Is this article going to be published on Nodejitsu?',
+  });
+
   this.prompt(prompts, function (props) {
+    this.nodejitsu = props.nodejitsu;
     this.modulename = props.modulename;
     this.projectname = this.projectname + this.modulename;
     this.repouri = this.repouri + this.projectname;
