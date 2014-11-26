@@ -1,15 +1,11 @@
-/*
+/**
  * generator-example
  *
  * Copyright(c) 2014 npmawesome.com
  * MIT Licensed
  *
- */
-
-/**
  * @author Alex Gorbatchev <alex.gorbatchev@gmail.com>
  * @author André König <andre.koenig@posteo.de>
- *
  */
 
 'use strict';
@@ -24,9 +20,9 @@ module.exports = NpmAwesomeExampleGenerator;
 
 function NpmAwesomeExampleGenerator (args, options) {
     yeoman.generators.Base.apply(this, arguments);
-    
+
     this.pkg = pkg;
-    
+
     // Will be asked
     this.modulename;
 
@@ -38,7 +34,7 @@ function NpmAwesomeExampleGenerator (args, options) {
 
     // Will be extended by the asked slug
     this.articleuri = 'http://npmawesome.com/posts/';
-    
+
     this.on('end', function () {
         if (!options['skip-install']) {
             this.spawnCommand('npm', ['install','--save', this.modulename]);
@@ -82,5 +78,5 @@ NpmAwesomeExampleGenerator.prototype.templates = function templates () {
 
 NpmAwesomeExampleGenerator.prototype.statics = function statics () {
     this.copy('gitignore', '.gitignore');
-    this.copy('LICENSE', 'LICENSE');    
+    this.copy('LICENSE', 'LICENSE');
 };
