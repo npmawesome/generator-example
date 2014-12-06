@@ -7,8 +7,7 @@ This example refers to the article on <% if(nodejitsu) { %>[nodejitsu.com](http:
     git clone <%= repouri %>
     cd <%= projectname %>
     npm install
-
-    npm start
+    npm test
 
 ## License
 
