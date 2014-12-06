@@ -9,4 +9,4 @@
 
 'use strict';
 
-var <%= modulename %> = require('<%= modulename %>');
+var <%= _.camelize(modulename) %> = require('<%= modulename %>');
